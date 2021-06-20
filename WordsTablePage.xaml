@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="WordsApp.WordsTablePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WordsApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" x:Name="TopStackPanel" Orientation="Horizontal" Margin="12" HorizontalAlignment="Center">
+            <TextBlock TextAlignment="Center" Margin="6" Width="250">Word</TextBlock>
+            <TextBlock TextAlignment="Center" Margin="6" Width="250">Meaning</TextBlock>
+            <TextBlock TextAlignment="Center" Margin="6" Width="50">Score</TextBlock>
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Center">
+            <ListView x:Name="WordsListView" ItemsSource="{x:Bind WordsToTable}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Word">
+                        <StackPanel Orientation="Horizontal" Margin="12">
+                            <TextBlock TextAlignment="Center" Margin="6" Width="250" Text="{x:Bind TheWord}"/>
+                            <TextBlock TextAlignment="Center" Margin="6" Width="250" Text="{x:Bind Meaning}"/>
+                            <TextBlock TextAlignment="Center" Margin="6" Width="50" Text="{x:Bind Score}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</Page>

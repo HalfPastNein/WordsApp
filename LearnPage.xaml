@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="WordsApp.LearnPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WordsApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,4,4,4">
+        <Border BorderBrush="Black" BorderThickness="1,1,0,1">
+            <TextBlock x:Name="RandomWordBlock" Width="250" TextAlignment="Center" VerticalAlignment="Center" Height="24" Text="please add at least one word"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Padding="0">
+            <TextBox x:Name="AnswerBlock" 
+                     Width="250" 
+                     BorderThickness="0" 
+                     Padding="0" 
+                     VerticalAlignment="Center"
+                     Height="24"
+                     PlaceholderText="Meaning"
+                     TextAlignment="Center"
+                     KeyDown="AnswerBlock_KeyDown"/>
+        </Border>
+        <Button Content="Submit" Margin="4" Click="Button_Click"></Button>
+        <TextBlock x:Name="ResultStatusBlock" Width="250" TextAlignment="Center" VerticalAlignment="Center" Height="24" Text="..."/>
+    </StackPanel>
+</Page>
